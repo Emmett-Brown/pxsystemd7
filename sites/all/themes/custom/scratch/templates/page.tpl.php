@@ -11,6 +11,7 @@
 </div>
 
 <div class="scratch-header clearfix">
+  <!-- PRINT LOGO HERE -->
   <div class="logo-div">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
@@ -18,9 +19,36 @@
       </a>
     <?php endif; ?>
   </div>
+  <!-- END PRINT LOGO -->
+  <!-- Main menu -->
   <div class="scratch-main-menu">
     <?php print render($page['main_menu']); ?>
   </div>
+  <!-- End Main menu -->
 </div>
 
-<?php print render($page['content']); ?>
+<div class="scratch-content-container-div clearfix">
+  <?php if ($messages): ?>
+    <div id="messages">
+      <div class="section clearfix">
+        <?php print $messages; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+   
+  <?php if ($breadcrumb): ?>
+    <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+  <?php endif; ?>
+   
+  <h1><?php print $title; ?></h1>
+   
+  <?php print render($page['content']); ?>
+</div>
+<!-- Footer -->
+<div class="scratch-footer">
+  <hr />
+  <div class="scratch-footer-text">
+    &copy; 2013 scratch. All rights reserved.
+  </div>
+</div>
+<!-- End Footer -->
